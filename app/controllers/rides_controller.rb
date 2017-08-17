@@ -7,7 +7,7 @@ class RidesController < ApplicationController
     if @ride.valid?
       @ride.save
     # flash[:success] = "Thanks for riding the #{Attraction.find(@ride.attraction_id).name}!"
-    # 
+    #
     end
     redirect_to user_path(session[:user_id])
   end
