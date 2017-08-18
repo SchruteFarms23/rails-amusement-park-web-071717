@@ -4,11 +4,8 @@ class RidesController < ApplicationController
     @ride = Ride.new
     @ride.user_id = session[:user_id]
     @ride.attraction_id = params[:attraction_id]
-    if @ride.valid?
-      @ride.save
-    # flash[:success] = "Thanks for riding the #{Attraction.find(@ride.attraction_id).name}!"
-    #
-    end
+      flash[:message] = @ride.take_ride
+    @ride.save
     redirect_to user_path(session[:user_id])
   end
 

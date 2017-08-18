@@ -1,5 +1,17 @@
+<% if @user.admin == true %>
+<ol>
+<% @attractions.each do |a| %>
+<li><%= link_to "Show #{a.name}", attraction_path(a)%></li><br>
+<% end %>
+</ol>
+
+<%= link_to "New Attraction", new_attraction_path %>
+<%else%>
+
+
 <ol>
 <% @attractions.each do |a| %>
 <li><%= link_to "Go on #{a.name}", attraction_path(a)%></li><br>
 <% end %>
 </ol>
+<%end%>

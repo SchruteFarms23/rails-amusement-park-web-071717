@@ -7,8 +7,10 @@ post '/users', to: 'users#create'
 get '/signin', to: 'sessions#new'
 post '/signin', to: 'sessions#create', as: 'submit'
 delete '/users/:id', to: 'sessions#destroy', as: 'logout'
-get '/attractions', to: 'attractions#index'
-get '/attractions/:id', to: 'attractions#show', as: 'attraction'
+# get '/attractions', to: 'attractions#index'
+# get '/attractions/:id', to: 'attractions#show', as: 'attraction'
 post '/rides', to: 'rides#create'
-
+# get 'attractions/new', to: 'attractions#new', as: 'attraction_new'
+# post '/attractions', to: 'attractions#create'
+resources :attractions
 end

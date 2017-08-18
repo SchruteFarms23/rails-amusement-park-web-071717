@@ -1,1 +1,13 @@
+<label>Name:</label> <%=@attraction.name%><br />
+
+<% if @user.admin == true %>
+<!-- <form action = '/attractions/<%=@attraction.id%>/edit' >
+    <input type="submit" value="Edit Attraction" />
+</form> -->
+<%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
+<%end%>
+
+
+<% if @user.admin == false %>
 <%= button_to "Go on this ride", {:controller => 'rides', action: "create", :attraction_id => @attraction.id, :method => :post}%>
+<%end%>

@@ -1,3 +1,9 @@
+
+<%if flash[:message] %>
+  <%= flash[:message] %>
+<% end %>
+
+
 <label>Name:</label> <%=@user.name%><br />
 <label>Mood:</label> <%=@user.mood%><br />
 <label>Tickets:</label> <%=@user.tickets%><br />
